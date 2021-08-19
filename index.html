@@ -11,15 +11,24 @@
     <script>
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Life in the Pond - WebGL.json", {onProgress: UnityProgress});
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <body style="display: none;">
     <div class="webgl-content">
       <div id="unityContainer" style="width: 960px; height: 600px"></div>
       <div class="footer">
         <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+              <div class="fullscreen" onclick="unityInstance.SetFullscreen(1);"></div>
         <div class="title">Life in the Pond</div>
       </div>
     </div>
+    
+    <script>
+      setTimeout(function(){
+        $("#unityContainer").find("button").click();
+        $("body").fadeIn();
+      }, 2000);
+    </script>
+    
   </body>
 </html>
